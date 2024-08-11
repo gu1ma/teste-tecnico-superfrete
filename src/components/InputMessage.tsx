@@ -35,7 +35,7 @@ export default function InputMessage() {
                 mb={4} 
                 h={16} 
                 borderRadius={12}
-                color="gray.300"
+                color="#999999"
                 value={message}
                 onChange={(event: ChangeEvent<HTMLInputElement>) => setMessage(event.target.value)}
             />
