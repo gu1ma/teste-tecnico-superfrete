@@ -7,7 +7,7 @@ import MessageList from './components/MessageList';
 function App() {
   return (
     <ChakraProvider>
-      <Stack h="100vh" m={0} p={0}>
+      <Stack h="100vh" w="100%" m={0} p={0}>
         <Stack>
           <Header />
           <InputMessage />
