@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">teste-tecnico-superfrete</string>
+    <string name="title_activity_main">teste-tecnico-superfrete</string>
+    <string name="package_name">com.testetecnico.superfrete</string>
+    <string name="custom_url_scheme">com.testetecnico.superfrete</string>
+</resources>
