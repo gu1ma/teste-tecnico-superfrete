@@ -39,11 +39,11 @@ export default function MessageList() {
     }, []);
 
     return (
-        <Box p={4} bg="gray.50" overflow="scroll">
+        <Box p={4} bg="gray.50">
             <Text fontWeight="bold" mb={2}>
                 Mensagens enviadas
             </Text>
-            <Stack spacing={2} overflow="scroll" h="55vh">
+            <Stack spacing={2} h="55vh" overflow="scroll">
                 {
                     messages.map((message) => (
                         <Message

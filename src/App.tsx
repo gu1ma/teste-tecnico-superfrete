@@ -1,18 +1,21 @@
 
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Stack } from '@chakra-ui/react'
 import Header from './components/Header';
 import InputMessage from './components/InputMessage';
 import MessageList from './components/MessageList';
-import InputMessageContextProvider from './contexts/InputMessageContext';
 
 function App() {
   return (
     <ChakraProvider>
-      <InputMessageContextProvider>
-        <Header />
-        <InputMessage />
-        <MessageList />
-      </InputMessageContextProvider>
+      <Stack h="100vh" m={0} p={0}>
+        <Stack>
+          <Header />
+          <InputMessage />
+        </Stack>
+        <Stack flex={1}>
+          <MessageList />
+        </Stack>
+      </Stack>
     </ChakraProvider>
   );
 }
