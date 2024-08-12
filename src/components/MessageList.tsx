@@ -59,14 +59,20 @@ export default function MessageList() {
                 ) : 
                     <Stack spacing={2} h="55vh" overflow="scroll">
                         {
-                            messages.map((message) => (
+                            messages.map((message, index) => (
                                 <Message
                                     key={message.date.seconds}
                                     message={message.content}
                                     date={formatDate(message.date.seconds * 1000)}
+                                    shouldShowHighlight={index === 0} // highlight the first message in the list
                                 />
                             ))
                         }
+                        { messages.length === 0 && (
+                            <Box mt={2}>
+                                <Text>No messages sent yet. <br /> Send your first message.</Text>
+                            </Box>
+                        )}
                 </Stack>
             }
         </Box>

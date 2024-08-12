@@ -1,9 +1,6 @@
-// MessageList.test.tsx
-
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { collection, onSnapshot } from 'firebase/firestore';
-import { db } from '../../config/firebaseConfig';
+import { onSnapshot } from 'firebase/firestore';
 import { MessageType } from '../../components/MessageList';
 import MessageList from '../../components/MessageList';
 

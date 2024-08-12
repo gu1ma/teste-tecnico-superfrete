@@ -3,10 +3,12 @@ import { useState, ChangeEvent } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../config/firebaseConfig";
 import { MessageType } from "./MessageList";
+import { useToast } from '@chakra-ui/react'
 
 export default function InputMessage() {
     const [message, setMessage] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
+    const toast = useToast();
 
     const handleSendMessage = async () => {
         try {
@@ -20,8 +22,21 @@ export default function InputMessage() {
             };
           
             await addDoc(collection(db, "messages"), newMessage);
+            toast({
+                title: 'Success',
+                description: "Your message was sent successful.",
+                status: 'success',
+                duration: 2000,
+                isClosable: true,
+            })
         } catch (e) {
-            console.log("message", e);
+            toast({
+                title: 'Error',
+                description: "For some reason, your message wasn't sent. Please try again later.",
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+            })
         } finally {
             setLoading(false);
             setMessage('');
