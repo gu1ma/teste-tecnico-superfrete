@@ -53,6 +53,7 @@ export default function MessageList() {
                             emptyColor="gray.200"
                             color="green.500"
                             size="xl"
+                            data-testid="loading-spinner"
                         />
                     </Center>
                 ) : 
